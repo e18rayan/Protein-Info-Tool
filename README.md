@@ -27,6 +27,11 @@ This tool takes in a CSV file with protein names, sequences, types (DNA, RNA, or
 
 The optional '-c' will provide generate the file above, plus an additional CSV file with each protein's amino acid breakdown (only 20 canconcial ones).
 
+#### Running the script
+```
+python Protein_Info.py Sequences.csv [-c]
+```
+
 ### Example
 #### Input file
 | Name      | Type      | Sequence       |
@@ -42,7 +47,7 @@ The optional '-c' will provide generate the file above, plus an additional CSV f
 |Protein2 | RNA     | AUG...UAA   | MDS...DSD*   | 387           | 43495.1   | 31140                |
 |Protein3 | Protein | MNF...PTV   | MNF...PTV    | 565           | 62778.78  | 35985                |
 
-#### Output file "Protein_AA_Counts.csv" from optional '-c'
+#### Output file will generate above plus "Protein_AA_Counts.csv" from optional '-c'
 | Amino Acid   | Protein1  | Protein2  | Protein3  |
 | :---         | :---      | :---      | :---      |
 | A            | 61        | 20        | 59        |
@@ -65,6 +70,39 @@ The optional '-c' will provide generate the file above, plus an additional CSV f
 | W            | 2         | 2         | 2         |
 | Y            | 14        | 11        | 14        |
 | V            | 40        | 23        | 40        |
+
+## Requirements
+### Installed libraries
+Required for script:
+```
+python 3.2 or above
+pandas 2.2.1 or above
+```
+The rest are standard Python libraries.
+
+### Input File
+Input file can be any name but must be a CSV file and contain the following fields within the file:
+- Name
+  - Column name must be typed exactly **Name** .
+  - Protein or sequence names can be any acceptable text.
+- Type
+  - Column name must be typed exactly **Type**.
+  - Fields can be: DNA, dna, D, RNA, rna, R, Protein, protein, P.
+  - Any other input will cause it to give you an "Invalid type".
+- Sequence
+  - Column name must be typed exactly **Sequence**.
+  - DNA can contain "ATCG" while RNA can contain "AUGC".
+    - No mixing DNA and RNA bases (e.g. "ATCU" not allowed).
+    - No degenerate bases.
+    - Does not have to contain start (ATG) or stop codons (TAG, TAA, TGA).
+    - Must be Oopen Reading Frame (ORF) that is divisble by 3.
+  - Proteins can contain any 1-letter code for the 20 amino acids as well as the 5 other non-canoncial amino acids:
+    - B, J, O, U, X, Z
+      - These only workds if "Protein" type is marked.
+      - They will be calculated for with length and MW, but will not be counted in the amino acid counts.
+    - Does not have to end with common stop codon indicators (*, -). "STOP" is invalid.
+  For all these fields, please be aware of any leading or trailing white spaces.
+
 
 
 
