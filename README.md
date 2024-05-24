@@ -48,7 +48,7 @@ The input file and script have to be in the same directory.
 |Protein2 | RNA     | AUG...UAA   | MDS...DSD*   | 387           | 43495.1   | 31140                |
 |Protein3 | Protein | MNF...PTV   | MNF...PTV    | 565           | 62778.78  | 35985                |
 
-#### Output file will generate above plus "Protein_AA_Counts.csv" from optional '-c'
+#### Output file will generate the file above plus "Protein_AA_Counts.csv" file using optional '-c' command line input
 | Amino Acid   | Protein1  | Protein2  | Protein3  |
 | :---         | :---      | :---      | :---      |
 | A            | 61        | 20        | 59        |
