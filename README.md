@@ -23,7 +23,7 @@ This tool takes in a CSV file with protein names, sequences, types (DNA, RNA, or
 1. Protein Translation Sequence
 2. Protein Length
 3. Molecular Weight (in g/mol)
-4. Extinction Coefficient ( in M$^-1$cm$^-1$
+4. Extinction Coefficient ( in M^-1^ cm^-1^
 
 The optional '-c' will provide generate the file above, plus an additional CSV file with each protein's amino acid breakdown (only 20 canconcial ones).
 
