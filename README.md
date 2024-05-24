@@ -25,12 +25,13 @@ This tool takes in a CSV file with protein names, sequences, types (DNA, RNA, or
 3. Molecular Weight (in g/mol)
 4. Extinction Coefficient ( in M<sup>-1</sup> cm<sup>-1</sup>)
 
-The optional '-c' will provide generate the file above, plus an additional CSV file with each protein's amino acid breakdown (only 20 canconcial ones).
+The optional '-c' will provide generate the file above, plus an additional CSV file with each protein's 20 canonical amino acids breakdown.
 
 #### Running the script
 ```
 python Protein_Info.py Sequences.csv [-c]
 ```
+The input file and script have to be in the same directory.
 
 ### Example
 #### Input file
@@ -106,7 +107,7 @@ Input file can be any name but must be a CSV file and contain the following fiel
 
 For all these fields, please be aware of any leading or trailing white spaces.
 
-
+Please let me know if there are any bugs or any new science updates requireming me to update the file.
 
 
 
