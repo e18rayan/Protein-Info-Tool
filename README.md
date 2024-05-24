@@ -27,15 +27,15 @@ This tool takes in a CSV file with protein names, sequences, types (DNA, RNA, or
 
 The optional '-c' will provide generate the file above, plus an additional CSV file with each protein's amino acid breakdown (only 20 canconcial ones).
 
-###Example
-####Input file
+### Example
+#### Input file
 | Name      | Type      | Sequence    |
 | :---      | :---      | :---        |
 |Protein1   | D         | ATGACGCGC   |
 |Protein2   | RNA       | AUGAAUUUU   |
 |Protein3   | Protein   | MTRREA      |
 
-####Output file "Protein_results.csv"
+#### Output file "Protein_results.csv"
 | Name    | Type    | Sequence    | Translation  | Protein Length| MW (g/mol)| Extinction Coefficent|
 | :---    | :---    | :---        | :---         | :---          | :---      | :---                 |
 |Protein1 | D       | ATGACGCGC   | MTR          | 3             | 406.49    | 0
