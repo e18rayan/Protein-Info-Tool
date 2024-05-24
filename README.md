@@ -100,8 +100,8 @@ Input file can be any name but must be a CSV file and contain the following fiel
     - Must be Open Reading Frame (ORF) that is divisble by 3.
   - Proteins can contain any 1-letter code for the 20 amino acids as well as the 5 other non-canoncial amino acids:
     - B, J, O, U, X, Z
-      - These only workds if "Protein" type is marked.
-      - They will be used to calculat length and MW, but will not be counted in the optional amino acid counts file.
+      - These are counted if "Protein" type is marked in the **Type** field.
+      - They will be used to calculate length and MW, but will not be counted in the optional amino acid counts file.
     - Does not have to end with common stop codon indicators (*, -), though "STOP" is invalid.
 
 For all these fields, please be aware of any leading or trailing white spaces.
