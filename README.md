@@ -38,7 +38,7 @@ python Protein_Info.py Sequences.csv [-c]
 | :---      | :---      | :---           |
 |Protein1   | D         | ATGACG...TAA   |
 |Protein2   | RNA       | AUGGAU...UAA   |
-|Protein3   | Protein   | MNF...PTV*     |
+|Protein3   | Protein   | MNF...PTV      |
 
 #### Output file "Protein_results.csv"
 | Name    | Type    | Sequence    | Translation  | Protein Length| MW (g/mol)| Extinction Coefficent|
@@ -72,8 +72,8 @@ python Protein_Info.py Sequences.csv [-c]
 | V            | 40        | 23        | 40        |
 
 ## Requirements
-### Installed libraries
-Required for script:
+### Required dependecies 
+Dependencies for script:
 ```
 python 3.2 or above
 pandas 2.2.1 or above
@@ -81,27 +81,31 @@ pandas 2.2.1 or above
 The rest are standard Python libraries.
 
 ### Input File
+A sample sheet named "Sample_Sheet.csv" is included if desired.
+
 Input file can be any name but must be a CSV file and contain the following fields within the file:
 - Name
-  - Column name must be typed exactly **Name** .
+  - Column header must be typed exactly **Name** .
   - Protein or sequence names can be any acceptable text.
 - Type
-  - Column name must be typed exactly **Type**.
+  - Column header must be typed exactly **Type**.
   - Fields can be: DNA, dna, D, RNA, rna, R, Protein, protein, P.
   - Any other input will cause it to give you an "Invalid type".
 - Sequence
-  - Column name must be typed exactly **Sequence**.
-  - DNA can contain "ATCG" while RNA can contain "AUGC".
+  - Column header must be typed exactly **Sequence**.
+  - DNA can contain any base "ATCG" while RNA can contain bases "AUGC".
     - No mixing DNA and RNA bases (e.g. "ATCU" not allowed).
     - No degenerate bases.
     - Does not have to contain start (ATG) or stop codons (TAG, TAA, TGA).
-    - Must be Oopen Reading Frame (ORF) that is divisble by 3.
+    - Must be Open Reading Frame (ORF) that is divisble by 3.
   - Proteins can contain any 1-letter code for the 20 amino acids as well as the 5 other non-canoncial amino acids:
     - B, J, O, U, X, Z
       - These only workds if "Protein" type is marked.
-      - They will be calculated for with length and MW, but will not be counted in the amino acid counts.
-    - Does not have to end with common stop codon indicators (*, -). "STOP" is invalid.
-  For all these fields, please be aware of any leading or trailing white spaces.
+      - They will be used to calculat length and MW, but will not be counted in the optional amino acid counts file.
+    - Does not have to end with common stop codon indicators (*, -), though "STOP" is invalid.
+
+For all these fields, please be aware of any leading or trailing white spaces.
+
 
 
 
