@@ -213,4 +213,4 @@ if __name__ == "__main__":
             raise FileNotFoundError
     
     except (FileNotFoundError, IOError):
-        print ("The file does not exist or is not a CSV file or incorrect arguments")
+        sys.exit ("The file does not exist or is not a CSV file or incorrect arguments")
